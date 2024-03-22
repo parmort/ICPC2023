@@ -1,17 +1,13 @@
-count1 = 0
+def is_a_beaut(x):
+    if len(x) % 3 != 0:
+        return False
+
+    combos = ['ABC', 'ACB', 'BAC', 'BCA', 'CAB', 'CBA']
+    c = 0
+
+    while c < len(x)-2:
+        if x[c:c+2] not in combos:
+            return False
+        c += 3
+
 s = input()
-while s:
-    newS = ""
-    charCount = {'A': 0, 'B': 0, 'C': 0}
-    minCount = 0
-    for c in s:
-        if charCount[c] == minCount:
-            charCount[c] += 1
-            minCount = min(min(charCount['A'], charCount['B']), charCount['C'])
-        else:
-            newS += c
-    s = newS
-    count1+=1
-
-print(count1)
-
